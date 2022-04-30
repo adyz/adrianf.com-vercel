@@ -26,7 +26,7 @@ const darkVars = `
   --colorSuperLigherBrown: #525040;
   --colorBg: #434238;
   --colorRed: #9F9C7D;
-  --colorGreen: #52870f;
+  --colorGreen: #34560a;
   --colorWhite: #28281F;
   --colorLogoBody: #6FA68C;
   --colorLogoLeg: #216155;
