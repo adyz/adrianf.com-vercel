@@ -5,7 +5,7 @@
   "license": "",
   "sideEffects": false,
   "scripts": {
-    "build": "remix build",
+    "build": "npm run build:css && remix build",
     "dev": "remix dev",
     "dev:css": "postcss styles --base styles --dir app/styles_dist/ -w",
     "build:css": "postcss styles --base styles --dir app/styles_dist --env production"
