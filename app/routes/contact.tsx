@@ -1,7 +1,7 @@
+import type { MetaFunction } from "@remix-run/node";
 import PageHeader from "../components/PageHeader"
 import SayHi from "../components/SayHi"
 import SocialLinks from "../components/SocialLinks"
-import type { MetaFunction } from "remix";
 import {getSocialMetas} from '../utils/seo/meta';
 
 export let meta: MetaFunction = ({location}) => {
