@@ -47,12 +47,6 @@ export let loader: LoaderFunction = (props: any) => {
   return json({colorMode: colorMode ? colorMode : 'unset'});
 };
 
-export const meta: MetaFunction = () => ({
-  charset: "utf-8",
-  title: "New Remix App",
-  viewport: "width=device-width,initial-scale=1",
-});
-
 function Layout({ children }: React.PropsWithChildren<{}>) {
   const profileImage = `http://adrianf.com/images/profile.jpeg`;
   const resizedProfileImage = `https://res.cloudinary.com/adrianf/image/fetch/f_auto,c_fill,h_800,w_800,q_60/${profileImage}`
@@ -166,6 +160,7 @@ function Document({
   return (
     <html lang="en">
       <head>
+        {title ? <title>{title}</title> : null}
         <Meta />
         <Links />
       </head>
