@@ -9,7 +9,7 @@ export default async function handleRequest(
   remixContext: EntryContext
 ) {
 
-  let stream = renderToStaticNodeStream(<RemixServer context={remixContext} url={request.url} />);
+  let stream = renderToStaticNodeStream(<p>cjc</p>);
 
   // and transform it to a Buffer to send in the Response
   let body: Buffer = await new Promise((resolve, reject) => {
