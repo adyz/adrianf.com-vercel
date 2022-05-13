@@ -1,6 +1,6 @@
 import type { EntryContext } from "@remix-run/node";
 import { RemixServer } from "@remix-run/react";
-import {renderToNodeStream } from "react-dom/server";
+import {renderToStaticNodeStream } from "react-dom/server";
 
 export default async function handleRequest(
   request: Request,
@@ -9,7 +9,7 @@ export default async function handleRequest(
   remixContext: EntryContext
 ) {
 
-  let stream = renderToNodeStream(<RemixServer context={remixContext} url={request.url} />);
+  let stream = renderToStaticNodeStream(<RemixServer context={remixContext} url={request.url} />);
 
   // and transform it to a Buffer to send in the Response
   let body: Buffer = await new Promise((resolve, reject) => {
