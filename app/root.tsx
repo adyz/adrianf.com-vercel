@@ -44,7 +44,11 @@ export let loader: LoaderFunction = (props: any) => {
   const colorMode = getCookie(COLOR_MODE_KEY, cookieString);
   
   
-  return json({colorMode: colorMode ? colorMode : 'unset'});
+  return json({colorMode: colorMode ? colorMode : 'unset', headers: {
+    // max-age controls the browser cache
+    // s-maxage controls a CDN cache
+    "Cache-Control":"public, max-age=30, s-maxage=86400"
+}});
 };
 
 function Layout({ children }: React.PropsWithChildren<{}>) {
