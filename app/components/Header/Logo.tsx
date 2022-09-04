@@ -4,7 +4,9 @@ export default function Logo() {
             xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" 
             x="0px" 
             y="0px"
-            width="548.14px" height="344.973px" viewBox="0 243.445 548.14 344.973" enableBackground="new 0 243.445 548.14 344.973"
+            width="100%"
+            viewBox="0 243.445 548.14 344.973" 
+            enableBackground="new 0 243.445 548.14 344.973"
             xmlSpace="preserve"
         >
             <path fill="#6FA68C" className="fill-colorLogoBody" d="M24,588.417l335-335h176L24,588.417z" />
