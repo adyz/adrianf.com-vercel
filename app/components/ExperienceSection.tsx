@@ -1,15 +1,16 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function ExperienceSection({ first = false, last = false, home = false, isVisible = false, item, full = false }: any) {
 
-
+  const [expanded, setExpanded] = useState<boolean>(false);
   const baseLogo = `/images/logos/${item.companyLogo}.jpg`;
   const fullLogo = `https://adrianf.com${baseLogo}`;
   const cloudinaryLogo = `https://res.cloudinary.com/adrianf/image/fetch/f_auto,h_200,w_200,q_60/${fullLogo}`
   return (
     <section
       className={`
-        flex flex-col relative mb-10
+        flex flex-col relative mb-20
           ${home ? 'home ' : ''} 
           ${isVisible ? 'isVisible' : ''}
           ${first ? 'isFirst' : ''}
@@ -18,20 +19,23 @@ export default function ExperienceSection({ first = false, last = false, home = 
     >
       <div>
         <img className="rounded-lg w-16 h-16 bg-colorWhite shadow-md float-right relative z-30" width="100%" loading="lazy" height="100%" alt={`Logo of ${item.company}`} src={cloudinaryLogo} />
-        {full ? (
-          <p className="text-colorBrown text-lg xl:text-xl uppercase font-bold tracking-widest">{item.title}</p>
-        ) : (
-          <Link className="text-colorBrown text-lg xl:text-xl uppercase font-bold tracking-widest block pt-5" to={`./${item.companyLogo}`}>{item.title}</Link>
-        )}
+        <div>
+          {full ? (
+            <p className="text-colorBrown text-sm md:text-lg xl:text-xl uppercase font-bold tracking-widest">{item.title}</p>
+          ) : (
+            <Link className="text-colorBrown text-sm md:text-lg xl:text-xl uppercase font-bold tracking-widest block pt-5" to={`./${item.companyLogo}`}>{item.title}</Link>
+          )}
+          <div className="w-12 h-[2px] bg-colorBrown mt-1"></div>
+        </div>
 
-        <p className="text-colorLigherBrown text-sm mt-5">{item.company}</p>
-        <p className="text-colorLigherBrown text-sm">
+        <p className="text-colorLigherBrown text-base mt-5">{item.company}</p>
+        <p className="text-colorLigherBrown text-base">
           {item.period.start} -{" "}
           {item.period.end}
         </p>
-        <p className="text-colorLigherBrown text-sm">{item.location}</p>
+        <p className="text-colorLigherBrown text-base">{item.location}</p>
       </div>
-      <div className="text-colorLightBrown text-base md:text-lg mt-5 w-10/12">
+      <div className="text-colorLightBrown text-base sm:text-xl md:text-2xl mt-8 w-10/12">
         <p>
           {item.intro}
         </p>
@@ -44,22 +48,22 @@ export default function ExperienceSection({ first = false, last = false, home = 
           {isVisible &&
             <div className="h-10 w-0.5 absolute z-10 top-0 right-8 bg-gradient-to-b from-colorSuperLigherBrown to-colorRed animate-dropFade" />
           }
-          <div className="h-full w-0.5 bg-colorSuperLigherBrown absolute top-10 right-8" />
+          <div className="h-[calc(100%+3rem)] w-0.5 bg-colorSuperLigherBrown absolute top-10 right-8" />
 
           {/* Dot */}
-          <div className="h-2.5 w-2.5  z-20 rounded-full absolute -bottom-5 right-7 bg-colorSuperLigherBrown" />
+          <div className="h-2.5 w-2.5  z-20 rounded-full absolute -bottom-10 right-7 bg-colorSuperLigherBrown" />
           {isVisible &&
-            <div className="h-2.5 w-2.5  z-20 rounded-full absolute -bottom-5 right-7 bg-colorRed opacity-0 animate-fadeInOut" />
+            <div className="h-2.5 w-2.5  z-20 rounded-full absolute -bottom-10 right-7 bg-colorRed opacity-0 animate-fadeInOut" />
           }
           
         </>
       )}
 
-      {full && <div className="mt-10">
+      {(full || expanded) && <div className="mt-10 mb-5">
         {item.milestones && (
-          <div>
+          <div className="mb-10">
             <p className="text-colorBrown text-lg xl:text-xl uppercase font-bold tracking-widest">Milestones: </p>
-            <ul className="text-colorLightBrown text-base md:text-lg mt-5 w-5/6">
+            <ul className="text-colorLightBrown text-base md:text-lg mt-1 w-5/6">
               {item.milestones.map((mile: any, mileI: any) => {
                 return (
                   <li key={`mile-${mileI}`}>
@@ -79,9 +83,9 @@ export default function ExperienceSection({ first = false, last = false, home = 
         )}
 
         {item.technologies.length > 0 && (
-          <div className="mt-10">
+          <div>
             <p className="text-colorBrown text-lg xl:text-xl uppercase font-bold tracking-widest">Used: </p>
-            <ul className="text-colorLightBrown text-base md:text-lg mt-5 w-5/6">
+            <ul className="text-colorLightBrown text-base md:text-lg mt-1 w-5/6">
               {item.technologies.map((tech: any, techI: any) => {
                 return <li className="inline" key={`tech-${techI}`}>{tech}{techI === item.technologies.length - 1 ? '' : ','} </li>
               })}
@@ -91,13 +95,13 @@ export default function ExperienceSection({ first = false, last = false, home = 
       </div>
       }
       {!full && 
-        <Link
-          className="text-colorBrown text-sm uppercase font-bold tracking-widest mt-2" 
-          to={`./${item.companyLogo}`}
+        <button
+          className="text-left text-colorBrown text-xs md:text-base uppercase font-bold tracking-widest mt-2" 
           title={`Read more about my experience with ${item.company}`}
+          onClick={() => setExpanded(!expanded)}
         >
-          Read more
-        </Link>
+          {expanded ? 'Read less' : 'Read more'}
+        </button>
       }
     </section>
   )
