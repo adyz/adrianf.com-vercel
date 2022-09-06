@@ -27,7 +27,6 @@ export default function handleRequest(
           let body = new PassThrough();
 
           responseHeaders.set("Content-Type", "text/html");
-          responseHeaders.set("Content-Security-Policy", "script-src https://adrianf.com")
 
           resolve(
             new Response(body, {
