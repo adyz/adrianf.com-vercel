@@ -62,7 +62,7 @@ export default function ExperienceSection({ first = false, last = false, home = 
       {(full || expanded) && <div className="mt-10 mb-5">
         {item.milestones && (
           <div className="mb-10">
-            <p className="text-colorBrown text-lg xl:text-xl uppercase font-bold tracking-widest">Milestones: </p>
+            <p className="text-colorBrown text-base xl:text-lg uppercase font-bold tracking-widest">Milestones: </p>
             <ul className="text-colorLightBrown text-base md:text-lg mt-1 w-5/6">
               {item.milestones.map((mile: any, mileI: any) => {
                 return (
@@ -84,7 +84,7 @@ export default function ExperienceSection({ first = false, last = false, home = 
 
         {item.technologies.length > 0 && (
           <div>
-            <p className="text-colorBrown text-lg xl:text-xl uppercase font-bold tracking-widest">Used: </p>
+            <p className="text-colorBrown text-base md:text-lg uppercase font-bold tracking-widest">Used: </p>
             <ul className="text-colorLightBrown text-base md:text-lg mt-1 w-5/6">
               {item.technologies.map((tech: any, techI: any) => {
                 return <li className="inline" key={`tech-${techI}`}>{tech}{techI === item.technologies.length - 1 ? '' : ','} </li>
