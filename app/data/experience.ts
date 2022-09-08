@@ -9,12 +9,22 @@ const items = [
     companyLogo: 'explorado',
     period: {
       start: formatDate(new Date("Jan 08, 2021")),
-      end: 'Present',
+      end: formatDate(new Date("Sept 02, 2022")),
     },
     location: "Bucharest, Romania",
-    intro: `I've started a comradeship with some ambitious and talented people aiming to make eCommerce modern and up to meet user's expectations for shopping in the age of AI, 5G, and streaming video content.`,
+    intro: `Worked on the administration and client-facing areas of a new e-commerce platform built from scratch. I've built things like a digital assets manager, dashboards with tables of data filtering of that on the admin side, and a complex real-time communication system on the client side where customers can communicate with sellers in real-time.    `,
     technologies: [
-      "JS", "React", "Redux", "TailwindCSS", "and all mentioned in my previous experiences"
+      "JS", "NextJS", "React", "Redux", "TailwindCSS", "WebSockets"
+    ],
+    milestones: [
+      {
+        title: 2022,
+        items: [
+          `On the administration side, I've built different reusable components and worked on most modules that allowed administrators to insert new data into the e-commerce system.`,
+          `A significant component that I've worked on was a component for managing digital assets (DAM) that allowed the admin to upload, delete and manage their assets easily. That component was used across the entire administration application where digital assets were required.`,
+          `On the client side, besides working on implementing standard e-commerce pages like accounts, wishlists, etc, I've worked on a real-time communication system where customers can interact with sellers in real-time. This was done using WebSockets.`
+        ]
+      }
     ]
   },
   {
