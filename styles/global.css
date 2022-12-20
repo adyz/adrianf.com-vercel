@@ -93,6 +93,12 @@ div:target {
   animation-delay: .25s;
 }
 
+
+#embedim--snow {
+  opacity: 0;
+  animation: fadeIn 5.5s forwards;
+}
+
 @keyframes fadeIn {
   0% {opacity:0;}
   100% {opacity:1;}
