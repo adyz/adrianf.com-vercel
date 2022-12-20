@@ -11,6 +11,7 @@ import soundToggle from "../../sounds/switch.wav"
 import { COLOR_MODE_KEY } from '~/constants';
 import type { TColorMode } from '~/constants';
 import { setCookie } from '~/utils/cookie';
+import {letItSnow} from '../../utils/snow';
 import { useLoaderData, useTransition, useLocation, Link } from '@remix-run/react';
 
 function replaceAll(originalString: string, find: string, replace: string) {
@@ -88,6 +89,24 @@ const Header = () => {
       prefersDarkScheme.removeListener(setThemeFuncForUserPrefEvent);
     };
   }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+      letItSnow()
+    }, 1000)
+    return () => {
+      document.getElementById('embedim--snow')?.remove();
+    }
+  }, [])
+
+  function handleToggleSnow(){
+    console.log('Toggle snow');
+    if(document.getElementById('embedim--snow')) {
+      document.getElementById('embedim--snow')?.remove();
+    } else {
+      letItSnow();
+    }
+  }
 
   if (!colorMode) {
     return null;
@@ -259,6 +278,7 @@ const Header = () => {
           {NAV_LINKS.map((currentItem) => {
             return <LinkItem {...currentItem} key={currentItem.link} />
           })}
+          <button onClick={handleToggleSnow}>❄️</button>
         </nav>
       </header>
 
