@@ -8,7 +8,7 @@ export function letItSnow() {
   let embCSS =
     `
     .embedim-snow{position: absolute;width: 10px;height: 10px;background: white;border-radius: 50%;margin-top:-10px}
-    .embedim-snow{background: var(--colorLightBrown)}
+    .embedim-snow{background: var(--colorSuperLigherBrown)}
     `
   let embHTML = ''
   for (let i = 1; i < 200; i++) {
