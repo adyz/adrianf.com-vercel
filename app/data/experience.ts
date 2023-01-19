@@ -6,11 +6,11 @@ const items = [
   {
     title: "Senior Front-end Engineer",
     company: "TechTalent",
-    companyLogo: "techtalent",
     period: {
       start: formatDate(new Date("Oct 01, 2022")),
       end: 'Present',
     },
+    location: "Bucharest, Romania (Remote)",
     intro: `I am excited to announce that I have recently taken on a new role as a Front-End Engineer at TechTalent. In this role, I am responsible for designing, developing, and maintaining the front-end of our client's the web applications. I am utilizing my expertise in HTML, CSS, JavaScript, and various front-end frameworks (React, Redux) to improve the user experience and drive business growth. I am thrilled to be working with a talented team and am looking forward to contributing to the company's success.`,
     technologies: [
       "HTML", "CSS", "JS", "React", "Redux", "Server-Sent Events (SSE)"
@@ -25,7 +25,7 @@ const items = [
       start: formatDate(new Date("Jan 08, 2021")),
       end: formatDate(new Date("Sept 02, 2022")),
     },
-    location: "Bucharest, Romania",
+    location: "Bucharest, Romania (Hybrid)",
     intro: `Worked on the administration and client-facing areas of a new e-commerce platform built from scratch. I've built things like a digital assets manager, dashboards with tables of data filtering of that on the admin side, and a complex real-time communication system on the client side where customers can communicate with sellers in real-time.    `,
     technologies: [
       "JS", "NextJS", "React", "Redux", "TailwindCSS", "WebSockets"

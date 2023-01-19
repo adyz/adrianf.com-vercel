@@ -6,7 +6,7 @@ export default function ExperienceSection({ first = false, last = false, home = 
   const [expanded, setExpanded] = useState<boolean>(false);
   const baseLogo = `/images/logos/${item.companyLogo}.jpg`;
   const fullLogo = `https://adrianf.com${baseLogo}`;
-  const cloudinaryLogo = `https://res.cloudinary.com/adrianf/image/fetch/f_auto,h_200,w_200,q_60/${fullLogo}`
+  const cloudinaryLogo = `https://res.cloudinary.com/adrianf/image/fetch/f_auto,h_400,w_400,q_60/${fullLogo}`
   return (
     <section
       className={`
