@@ -6,6 +6,7 @@ const items = [
   {
     title: "Senior Front-end Engineer",
     company: "TechTalent",
+    companyLogo: 'techtalent',
     period: {
       start: formatDate(new Date("Oct 01, 2022")),
       end: 'Present',
