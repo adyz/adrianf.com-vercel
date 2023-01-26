@@ -231,6 +231,9 @@ const Header = () => {
             :root {
               ${lightVars}
             }
+            html {
+              color-scheme: light;
+            }
           `}
         </style>
       )}
@@ -238,6 +241,9 @@ const Header = () => {
       {colorMode === 'dark' && (
         <style>
           {`
+          html {
+            color-scheme: dark;
+          }
           :root {
             ${darkVars}
           }
