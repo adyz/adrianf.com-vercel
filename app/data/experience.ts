@@ -4,19 +4,56 @@ function formatDate(date: any) {
 }
 const items = [
   {
+    title: "Staff Software Engineer (Front-End)",
+    company: "Spirent",
+    companyLogo: 'spirent',
+    period: {
+      start: formatDate(new Date("Oct 01, 2023")),
+      end: 'Present',
+    },
+    location: "Bucharest, Romania (Hybrid)",
+    intro: `Direct employee of Spirent instead of contractor, working on another testing platform based on web technologies.`,
+    technologies: [
+      "React", "Typescript", "Webpack", "React Testing Library", "React Query", "Styled Components"
+    ],
+    milestones: [
+      {
+        title: 2022,
+        items: [
+          `I moved from TechTalent being a contractor for Spirent to being a direct employee of Spirent. 
+          Switched to a new project that uses not only new technologies like React and Typescript, but also working on legacy codebases started more than ten years ago.`,
+        ]
+      }
+    ]
+  },
+  {
     title: "Senior Front-end Engineer",
     company: "TechTalent",
     companyLogo: 'techtalent',
     period: {
       start: formatDate(new Date("Oct 01, 2022")),
-      end: 'Present',
+      end: formatDate(new Date("Oct 01, 2023")),
     },
     location: "Bucharest, Romania (Remote)",
-    intro: `I am excited to announce that I have recently taken on a new role as a Front-End Engineer at TechTalent. In this role, I am responsible for designing, developing, and maintaining the front-end of our client's the web applications. I am utilizing my expertise in HTML, CSS, JavaScript, and various front-end frameworks (React, Redux) to improve the user experience and drive business growth. I am thrilled to be working with a talented team and am looking forward to contributing to the company's success.`,
+    intro: `As a contractor for Spirent, in this role, I was responsible for designing, developing, and maintaining the front-end of our client's web applications. `,
     technologies: [
-      "HTML", "CSS", "JS", "React", "Redux", "Server-Sent Events (SSE)"
+      "React", "Typescript", "Webpack", "SSE (Server sent events)", "react-hook-form", "OpenAPI Typescript Codegen", "Jest", "react-testing-library", "Cypress", "JenkinsWorked"
     ],
-    milestones: false
+    milestones: [
+      {
+        title: 2022,
+        items: [
+          `The application I worked on helped our users work with test hardware and software for automotive in the v2x context, but not limited to that.`,
+          `I was utilizing my expertise in HTML, CSS, JavaScript, and various front-end frameworks (React, Redux) to improve the user experience and drive business growth.`,
+          `Some key work done on this project:`,
+          `• Designed and implemented the user interface for the application`,
+          `• Improved overall performance for large data tables`,
+          `• Updated E2E tests with Cypress to use testing-library and cover more features of the app`,
+          `• Automated typescript/swagger type definitions for better backend integration`,
+          `• Updated dependencies and React version to the latest (18), where unit tests and e2e tests helped smooth this transition and ensured no bugs were introduced.`,
+        ]
+      }
+    ]
   },
   {
     title: "Senior Front-end Developer",
@@ -56,11 +93,11 @@ const items = [
       {
         title: 2018,
         items: [
-          `Implemented the designs and features for the main financial planning application`,
-          `Developed a library where each team can publish their own react components and use across the organization`,
-          `Won an innovation award for building a grid-like component that needed to handle around 30-40 thousand of nodes all on a single render`,
-          `Participated in an IBM program called "Everyday Leadership" that helped me develop my soft skills like speaking in public, communicating with colleagues, and many more`,
-          `Mentored a few colleagues`
+          `• Implemented the designs and features for the main financial planning application`,
+          `• Developed a library where each team can publish their own react components and use across the organization`,
+          `• Won an innovation award for building a grid-like component that needed to handle around 30-40 thousand of nodes all on a single render`,
+          `• Participated in an IBM program called "Everyday Leadership" that helped me develop my soft skills like speaking in public, communicating with colleagues, and many more`,
+          `• Mentored a few colleagues`
         ]
       }
     ],

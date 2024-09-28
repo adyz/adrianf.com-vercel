@@ -171,7 +171,7 @@ function Layout({ children }: React.PropsWithChildren<{}>) {
 
               </a>
             </p>
-          <p className="text-[10px] m-0" ><small>Latest update: 11 Dec 2021</small></p>
+          <p className="text-[10px] m-0" ><small>Latest update: 28 Sept 2024</small></p>
         </div>
       </footer>
     </>
